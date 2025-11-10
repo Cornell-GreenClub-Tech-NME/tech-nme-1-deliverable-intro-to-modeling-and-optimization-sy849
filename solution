@@ -16,3 +16,7 @@ if solution.success:
     print(f"Total impact score: {-solution.fun:.2f}")
 else:
     print("No solution found.") # when .success == False
+Optimal solution found:
+Kg to compost: 0.00
+Kg to donate: 60.00
+Total impact score: 300.00
