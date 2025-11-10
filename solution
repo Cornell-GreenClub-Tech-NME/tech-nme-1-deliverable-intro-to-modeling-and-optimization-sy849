@@ -1,15 +1,13 @@
 from scipy.optimize import linprog
 objective=[-2,-5]
-A_ub=[[.12,.25]]
-b_ub=[15]
-A_eq=[[1,1]]
-b_eq=[80]
+constraint_coeffs=[[.12,.25],[1,1]] 
+constraint_limits=[15,80]
 x_bounds=(0,None)
 y_bounds=(0,None)
 solution = linprog(objective,
-A_ub=A_ub, b_ub= b_ub,
-A_eq=A_eq, b_eq=b_eq,
-bounds=[x_bounds, y_bounds],
+A_ub= constraint_coeffs,
+b_ub= constraint_limits,
+bounds=[x_bounds, y_bounds], 
 method='highs')
 if solution.success:
     print("Optimal solution found:")
